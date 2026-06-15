@@ -183,8 +183,10 @@ if search_tool:
 # Agent Setup
 # ==============================================================================
 
+MODEL_NAME = os.getenv("OPENROUTER_MODEL", "deepseek/deepseek-chat").strip()
+
 llm = LLM(
-    model=os.getenv("MODEL", "openrouter/openai/gpt-4o-mini"),
+    model=MODEL_NAME,
     api_key=os.getenv("OPENROUTER_API_KEY"),
     base_url=os.getenv("OPENROUTER_API_BASE", "https://openrouter.ai/api/v1"),
     temperature=0.5,
@@ -694,7 +696,7 @@ async def startup_event():
     print(f"\n✅ Agent ID: {MY_AGENT_ID}")
     print(f"✅ Agent Name: {MY_AGENT_NAME}")
     print(f"✅ Specialization: Robotics & Automation Systems")
-    print(f"✅ Model: {llm.model}")
+    print(f"✅ Model: {MODEL_NAME}")
     print("✅ Memory: Enabled (4 types)")
     print(f"✅ Tools: {len(available_tools)} tools loaded")
     print("✅ A2A: Enabled (NANDA-style)")
