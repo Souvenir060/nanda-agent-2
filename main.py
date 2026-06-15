@@ -189,7 +189,7 @@ if search_tool:
 # Agent Setup
 # ==============================================================================
 
-MODEL_NAME = "deepseek/deepseek-chat"
+MODEL_NAME = "openrouter/deepseek/deepseek-chat"
 
 llm = LLM(
     model=MODEL_NAME,
