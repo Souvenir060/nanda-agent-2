@@ -43,3 +43,10 @@ logs/
 # OS
 .DS_Store
 Thumbs.db
+
+.venv/
+__pycache__/
+logs/
+*.pyc
+.env
+main.py.bak
